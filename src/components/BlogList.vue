@@ -3,7 +3,7 @@
     <ol>
       <li v-for="blog in blogList" class="blog">
         <div class="title">
-          <router-link to="/hello">{{ blog.title }}</router-link>
+          <router-link :to="{path:'/blog/edit', query: {id: blog.id}}">{{ blog.title }}</router-link>
         </div>
         <div class="content">{{ blog.content }}</div>
       </li>
@@ -18,10 +18,12 @@
       return {
         blogList: [
           {
+            id: 1,
             title: 'First Article',
             content: 'First Article Content'
           },
           {
+            id: 2,
             title: 'Second Article',
             content: 'Second Article Content'
           }
